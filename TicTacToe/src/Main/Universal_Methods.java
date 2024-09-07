@@ -12,7 +12,7 @@ public class Universal_Methods
 	static boolean tie = false;
 	static int chosenRow = -1;
     static int chosenCol = -1;
-    static String placement1;
+    static String placement;
 	
 	//creates the game board
     public static void prepareBoard()
@@ -47,29 +47,29 @@ public class Universal_Methods
     	{
 	    Scanner userStringInput = new Scanner(System.in);
 	    System.out.println("Which spot would you like to play in?");  
-	     placement1 = userStringInput.nextLine();
-	    placement1 = placement1.toUpperCase();
+	     placement = userStringInput.nextLine();
+	    placement = placement.toUpperCase();
 	    }
     
     //places an "X" in the spot chosen by the user
     public static void placeX()
     	{
-    	if(placement1.substring(0,1).equals("A"))
+    	if(placement.substring(0,1).equals("A"))
 	        {
 	        chosenRow = 0;
 	        }
 
-        else if(placement1.substring(0,1).equals("B"))
+        else if(placement.substring(0,1).equals("B"))
 	        {
 	        chosenRow = 1;
 	        }
 
-        else if(placement1.substring(0,1).equals("C"))
+        else if(placement.substring(0,1).equals("C"))
 	        {
 	        chosenRow = 2;
 	        }
 
-        chosenCol = Integer.parseInt(placement1.substring(1))-1;
+        chosenCol = Integer.parseInt(placement.substring(1))-1;
 
         if(myMatrix[chosenRow][chosenCol].equals(" "))
 	        {
@@ -88,22 +88,22 @@ public class Universal_Methods
     //places an "O" in the spot chosen by the user
     public static void placeO()
 		{
-	    if(placement1.substring(0,1).equals("A"))
+	    if(placement.substring(0,1).equals("A"))
 	    	{
 	    	chosenRow = 0;
 	    	}
 
-		else if(placement1.substring(0,1).equals("B"))
+		else if(placement.substring(0,1).equals("B"))
 		    {
 		    chosenRow = 1;
 		    }
 		
-        else if(placement1.substring(0,1).equals("C"))
+        else if(placement.substring(0,1).equals("C"))
 		    {
 		    chosenRow = 2;
 		    }
 		
-		  chosenCol = Integer.parseInt(placement1.substring(1))-1;
+		  chosenCol = Integer.parseInt(placement.substring(1))-1;
 		
 		if(myMatrix[chosenRow][chosenCol].equals(" "))
 		    {

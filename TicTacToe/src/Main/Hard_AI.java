@@ -7,17 +7,17 @@ public class Hard_AI
 		Universal_Methods.prepareBoard();
         Universal_Methods.displayBoard();
 		
-		while(Universal_Methods.stillPlaying && !Universal_Methods.tie)
-        {
-		Universal_Methods.playerInput();
-	    Universal_Methods.displayBoard();
-	    Universal_Methods.isWonGame();
-	    Universal_Methods.checkForTie();
-	    hardAITurn();
-	    Universal_Methods.displayBoard();
-	    Universal_Methods.isWonGame();
-	    Universal_Methods.checkForTie();	
-        }
+		while(!Universal_Methods.tie)
+	        {
+			Universal_Methods.playerInput();
+		    Universal_Methods.placeX();
+		    Universal_Methods.isWonGame();
+		    Universal_Methods.checkForTie();
+		    hardAITurn();
+		    Universal_Methods.displayBoard();
+		    Universal_Methods.isWonGame();
+		    Universal_Methods.checkForTie();	
+	        }
 		}
 	
 	//level 2 ai checks each row, col, and diag for wins and blocks
@@ -42,7 +42,7 @@ public class Hard_AI
     //for the level 2 ai, it checks if it can block the player from winning 
     public static void checkBlock()
       {
-    	Universal_Methods.foundMove = false;
+      Universal_Methods.foundMove = false;
       checkBlockRow();
       checkBlockCol();
       checkBlockDiag();
@@ -66,10 +66,10 @@ public class Hard_AI
                 {
                 if(Universal_Methods.myMatrix[row][col].equals(" "))
                   {
-                	Universal_Methods.myMatrix[row][col] = "O";
-                	Universal_Methods.myMatrix2[row][col] = 5;
-                	Universal_Methods.playCount++;
-                	Universal_Methods.foundMove = true;
+                  Universal_Methods.myMatrix[row][col] = "O";
+                  Universal_Methods.myMatrix2[row][col] = 5;
+                  Universal_Methods.playCount++;
+                  Universal_Methods.foundMove = true;
                   return;
                   }
                 }
@@ -79,7 +79,7 @@ public class Hard_AI
         }
       }
   
-    //checks the colums to see if it can win
+    //checks the columns to see if it can win
     public static void checkWinCol()
       {
       if(Universal_Methods.foundMove == false)
@@ -109,7 +109,7 @@ public class Hard_AI
         }
       }
   
-    //checks the diagionals for a winning position
+    //checks the diagonals for a winning position
     public static void checkWinDiagonal() 
       {
       if (Universal_Methods.foundMove == false) 
@@ -136,7 +136,7 @@ public class Hard_AI
         }
       }
   
-    //checks the reverse diagionals for winning positions
+    //checks the reverse diagonals for winning positions
     public static void checkWinReverseDiagonal() 
       {
     if (Universal_Methods.foundMove == false) 
@@ -193,7 +193,7 @@ public class Hard_AI
         }
       }
   
-    //checks the colums to see if it can block the player from winning
+    //checks the columns to see if it can block the player from winning
     public static void checkBlockCol()
       {
       if(Universal_Methods.foundMove == false)
@@ -223,7 +223,7 @@ public class Hard_AI
         }
       }
   
-    //checks the diagionals to see if it can block the player from winning
+    //checks the diagonals to see if it can block the player from winning
     public static void checkBlockDiag()
       {
       if (Universal_Methods.foundMove == false) 
@@ -250,7 +250,7 @@ public class Hard_AI
         }
       }
   
-    //checks the reverse diagionals to see if it can block the player from winning
+    //checks the reverse diagonals to see if it can block the player from winning
     public static void checkBlockReverseDiag()
       {
       if (Universal_Methods.foundMove == false) 
@@ -277,7 +277,7 @@ public class Hard_AI
       }
       }
   
-    //if the ai can't block or win, it plays in the center
+    //if the AI can't block or win, it plays in the center
     public static void playCenter()
       {
       if(Universal_Methods.foundMove == false)
@@ -293,7 +293,7 @@ public class Hard_AI
         }
       }
   
-    // if the ai can't win, block, or play in the center, it makes a random move
+    // if the AI can't win, block, or play in the center, it makes a random move
     public static void playRandom()
       {
       if(Universal_Methods.foundMove == false)

@@ -7,27 +7,26 @@ public class Easy_AI
 	Universal_Methods.prepareBoard();
     Universal_Methods.displayBoard();
 	
-	while(Universal_Methods.stillPlaying && !Universal_Methods.tie)
-    {
-	Universal_Methods.playerInput();
-    Universal_Methods.displayBoard();
-    Universal_Methods.isWonGame();
-    Universal_Methods.checkForTie();
-    easyAITurn();
-    Universal_Methods.displayBoard();
-    Universal_Methods.isWonGame();
-    Universal_Methods.checkForTie();	
-    }
+	while(!Universal_Methods.tie)
+    	{
+		Universal_Methods.playerInput();
+		Universal_Methods.placeX();
+	    Universal_Methods.isWonGame();
+	    Universal_Methods.checkForTie();
+	    easyAITurn();
+	    Universal_Methods.isWonGame();
+	    Universal_Methods.checkForTie();	
+	    }
 	}
 	
-	//level 1 ai makes random moves on the board
+	//level 1 AI makes random moves on the board
     public static void easyAITurn()
-      {
-          int row = (int)(Math.random()*3);
-          int col = (int)(Math.random()*3);
+    	{
+        int row = (int)(Math.random()*3);
+        int col = (int)(Math.random()*3);
     
-          if(Universal_Methods.myMatrix[row][col].equals(" "))
-            {
+        if(Universal_Methods.myMatrix[row][col].equals(" "))
+        	{
             Universal_Methods.myMatrix[row][col] = "O";
             Universal_Methods.myMatrix2[row][col] = 5;
             Universal_Methods.playCount++;
@@ -37,5 +36,7 @@ public class Easy_AI
             {
             easyAITurn();
             }
+        
+        Universal_Methods.displayBoard();
         }
 	}

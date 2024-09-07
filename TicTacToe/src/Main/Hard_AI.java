@@ -210,10 +210,10 @@ public class Hard_AI
                 {
                 if(Universal_Methods.myMatrix[row][col].equals(" "))
                   {
-                	Universal_Methods.myMatrix[row][col] = "O";
-                	Universal_Methods.myMatrix2[row][col] = 5;
-                	Universal_Methods.playCount++;
-                	Universal_Methods.foundMove = true;
+                  Universal_Methods.myMatrix[row][col] = "O";
+                  Universal_Methods.myMatrix2[row][col] = 5;
+                  Universal_Methods.playCount++;
+                  Universal_Methods.foundMove = true;
                   return;
                   }
                 }
